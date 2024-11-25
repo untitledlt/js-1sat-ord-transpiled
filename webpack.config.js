@@ -20,5 +20,18 @@ module.exports = {
     ],
   },
   mode: 'production',
-  target: 'node', // Target Node.js environment
+  target: ['node12', 'es5'], // Target Node.js and ES2020
+  output: {
+    filename: 'library.bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    library: {
+      type: 'commonjs',
+    },
+    environment: {
+      bigIntLiteral: false, // Ensure BigInt literals are supported
+      const: true, // Enable `const` in the output
+      destructuring: true, // Allow destructuring
+      arrowFunction: true, // Allow arrow functions in output
+    },
+  },
 };
