@@ -33,5 +33,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.mjs'], // Resolve .js and .mjs files
   },
+  mode: 'production', // Set mode to production
   target: 'node', // Target Node.js environment
 };

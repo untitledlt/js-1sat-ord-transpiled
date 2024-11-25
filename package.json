@@ -1,11 +1,12 @@
 {
   "name": "js-1sat-ord-transpiled",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/es-module.bundle.js",
   "types": "dist/index.d.ts",
   "private": true,
   "scripts": {
-    "build": "tsup src/index.ts --dts --no-external --external esbuild --out-dir dist"
+    "build": "npx webpack --config webpack.config.js",
+    "buildX": "tsup src/index.ts --dts --no-external --external esbuild --out-dir dist"
   },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
