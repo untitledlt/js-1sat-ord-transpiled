@@ -1,7 +1,7 @@
 {
   "name": "js-1sat-ord-transpiled",
   "version": "0.0.0",
-  "main": "dist/index.js",
+  "main": "dist/es-module.bundle.js",
   "types": "dist/index.d.ts",
   "private": true,
   "scripts": {
@@ -9,13 +9,19 @@
   },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
+    "@bsv/sdk": "^1.1.33",
     "esbuild": "^0.24.0",
     "js-1sat-ord": "^0.1.76",
     "satoshi-token": "^0.0.4",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
     "@swc/core": "1.7.26",
-    "tsup": "^8.3.0"
+    "babel-loader": "^9.2.1",
+    "tsup": "^8.3.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
   }
 }
