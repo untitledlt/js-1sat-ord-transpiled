@@ -10,8 +10,6 @@
   "packageManager": "yarn@4.5.0",
   "dependencies": {
     "esbuild": "^0.24.0",
-    "js-1sat-ord": "^0.1.76",
-    "satoshi-token": "^0.0.4",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
