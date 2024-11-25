@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "CommonJS",
-    "declaration": true, // Emit type declaration files
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true
+    "declaration": true, // Generate .d.ts files
+    "emitDeclarationOnly": false, // Emit both .js and .d.ts files
+    "outDir": "./dist", // Output directory for bundled files
+    "module": "CommonJS", // Target CommonJS format
+    "target": "ESNext", // Use modern JavaScript
+    "moduleResolution": "Node", // Resolve Node.js-style modules
+    "strict": true, // Enable strict typing (optional)
+    "skipLibCheck": true // Optional: Skip type checks for libraries
   },
-  "include": ["src/**/*", "webpack.config.js"]
+  "include": ["src/**/*"], // Include your source files
+  "exclude": ["node_modules", "dist"] // Exclude unnecessary files
 }

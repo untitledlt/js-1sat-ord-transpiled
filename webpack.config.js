@@ -1,38 +1,24 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js', // Path to your ES module entry file
+  entry: './src/index.ts', // Your library entry point
   output: {
-    filename: 'es-module.bundle.js', // Output file name
+    filename: 'library.bundle.js', // Output file name
     path: path.resolve(__dirname, 'dist'), // Output directory
-    libraryTarget: 'commonjs2', // Output as CommonJS
+    libraryTarget: 'commonjs2', // Generate CommonJS2 module
+  },
+  resolve: {
+    extensions: ['.ts', '.js'], // Resolve TypeScript and JavaScript files
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/, // Match .js or .mjs files
-        exclude: /node_modules/, // Exclude node_modules
-        use: {
-          loader: 'babel-loader', // Use Babel to transpile
-          options: {
-            presets: [
-              [
-                '@babel/preset-env',
-                {
-                  targets: {
-                    node: 'current', // Target the current Node.js version
-                  },
-                },
-              ],
-            ],
-          },
-        },
+        test: /\.ts$/, // Match .ts files
+        exclude: /node_modules/,
+        use: 'ts-loader', // Use ts-loader to transpile TypeScript
       },
     ],
   },
-  resolve: {
-    extensions: ['.js', '.mjs'], // Resolve .js and .mjs files
-  },
-  mode: 'production', // Set mode to production
+  mode: 'production',
   target: 'node', // Target Node.js environment
 };
